@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 1px solid red;
+}
+.divsWrapper{
+    display: grid;
+    grid-template-columns: repeat(16, 30px [col-start]);
+}
+
+.squareDiv{
+    height: 30px;
+    /* width: 30px; */
+}
+/* .squareDiv:hover{
+    background-color: aquamarine;
+} */
