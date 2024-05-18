@@ -4,15 +4,41 @@
     padding: 0;
     outline: 1px solid red;
 }
-.divsWrapper{
-    display: grid;
-    grid-template-columns: repeat(16, 30px [col-start]);
+body{
+    background-color: rgb(202, 155, 155);
 }
 
-.squareDiv{
-    height: 30px;
-    /* width: 30px; */
+nav{
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(54, 6, 6);
 }
+
+.divsWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+    width : 559px; 
+    height :550px;
+    /* width: 508px; */
+    /*margin: auto;
+    padding: auto;
+    display: grid; */
+    /* grid-template-columns: repeat(auto-fill, 30px); */
+    /* gap: 0; */
+}
+.squareDiv2{
+    height: 10px;
+    width: 10px;
+}
+
+/* .squareDiv{
+    height: 30px;
+    width: 30px; 
+}  */
 /* .squareDiv:hover{
     background-color: aquamarine;
 } */
