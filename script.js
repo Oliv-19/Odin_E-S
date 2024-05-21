@@ -5,24 +5,29 @@ let btn = document.querySelectorAll('.btn')
 let colorInput = document.getElementById('color');
 let color = document.getElementById('colorVal').innerHTML
 
-colorInput.addEventListener('input', () =>{
-   color = colorInput.value;
-    
-});
-let darkening = false
-dark.addEventListener('click', function(){
-    darkening = true
-})
+let r 
+let g
+let b
 
+colorInput.addEventListener('input', () =>{
+    color = colorInput.value;
+
+    r = parseInt(color.substr(1, 2), 16)
+    g = parseInt(color.substr(3, 2), 16)
+    b = parseInt(color.substr(5, 2), 16)
+    
+    color = `rgb(${r},${g},${b})`
+   
+});
 
 btn.forEach(element => {
     let cSize = (element.id * element.id)
     
-
     element.addEventListener('click', ()=> {
         removeDivs()
         darkening = false
         for (let i = 0; i < cSize;i++) {
+
             let squareDiv = document.createElement('div')
             squareDiv.className = 'squareDiv'
             squareDiv.dataset.squareDiv = i;
@@ -37,18 +42,10 @@ btn.forEach(element => {
                 
                 squareDiv.style.backgroundColor = color
 
-                if (darkening == true){
-                    let opacity = Number(squareDiv.style.opacity);
-                    squareDiv.style.opacity = opacity >= 1 ? "1" : opacity + 0.1 + "";
-                }
-                
-                
             
             })
         }
-        
-        
-
+       
     }
     )
 })
@@ -59,4 +56,22 @@ function removeDivs() {
     };
 };
 
+
+function darkenPencilColor() {
+    let darkR = r ;
+    let darkG = g;
+    let darkB = b;
+    return function(e) {
+        darkR -= 25;
+        darkG -= 25;
+        darkB -= 25;
+        e.target.style.backgroundColor = `rgb(${darkR}, ${darkG}, ${darkB})`;
+    }
+}
+
+dark.addEventListener('click', function() {
+    const squareDiv = document.querySelectorAll('.squareDiv');
+    squareDiv.forEach(square => square.addEventListener('mouseover', darkenPencilColor()));
+    
+});
 
