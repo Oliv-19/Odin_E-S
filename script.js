@@ -1,5 +1,6 @@
 let divsWrapper = document.querySelector('.divsWrapper')
 let dark = document.querySelector('.dark')
+let rainbow = document.querySelector('.rainbow')
 
 let btn = document.querySelectorAll('.btn')
 let colorInput = document.getElementById('color');
@@ -19,6 +20,18 @@ colorInput.addEventListener('input', () =>{
     color = `rgb(${r},${g},${b})`
    
 });
+
+function randomInt(min = 0, max = 255) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+rainbow.addEventListener('click', () =>{
+    const squareDiv = document.querySelectorAll('.squareDiv');
+    squareDiv.forEach(square => square.addEventListener('mouseover', ()=>{
+        color = `rgb(${randomInt()}, ${randomInt()}, ${randomInt()})`;
+    }));
+    
+    
+})
 
 btn.forEach(element => {
     let cSize = (element.id * element.id)

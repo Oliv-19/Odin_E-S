@@ -55,7 +55,7 @@ body{
     
 }
 
-.btn, .dark{
+.btn, .dark, .rainbow{
     padding: 5px;
     background-color: rgb(92, 72, 72);
     color: white;
