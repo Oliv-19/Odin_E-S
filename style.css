@@ -55,10 +55,14 @@ body{
     
 }
 
-.btn, .dark, .rainbow{
+.btn, .clear, .dark, .rainbow, #color{
     padding: 5px;
     background-color: rgb(92, 72, 72);
     color: white;
     border: 1px solid black;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.384);
+}
+
+#color{
+    padding: 0 3px;
 }

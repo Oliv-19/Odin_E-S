@@ -1,6 +1,7 @@
 let divsWrapper = document.querySelector('.divsWrapper')
 let dark = document.querySelector('.dark')
 let rainbow = document.querySelector('.rainbow')
+let clear = document.querySelector('.clear')
 
 let btn = document.querySelectorAll('.btn')
 let colorInput = document.getElementById('color');
@@ -88,3 +89,8 @@ dark.addEventListener('click', function() {
     
 });
 
+clear.addEventListener('click', ()=>{
+    let squareDiv = document.querySelectorAll('.squareDiv');
+    squareDiv.forEach(square => square.style.backgroundColor = 'white')
+    
+})
